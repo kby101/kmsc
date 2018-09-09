@@ -9,8 +9,8 @@ const config = require("./config.json");
 const client = new Discord.Client();
 const youtube = new YouTube(google_api_key);
 const queue = new Map();
-const DBL = require("dblapi.js");
-const dbl = new DBL(process.env.DBL_API, bot);
+//const DBL = require("dblapi.js");
+//const dbl = new DBL(process.env.DBL_API, bot);
 
 /*dbl.on('posted', () => {
   console.log('Server count posted!');
