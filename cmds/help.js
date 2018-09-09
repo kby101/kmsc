@@ -8,7 +8,7 @@ exports.run = async (bot, message, args) => {
   .setColor(config.k)
   .setThumbnail(bicon)
   .setTitle("Hello", bicon)
-  .setDescription(`Thanks for using me, my prefix is ``${config.prefix}`` and my music command is :`)
+  .setDescription(`Thanks for using me, my prefix is \`\`${config.prefix}\`\` and my music command is :`)
   .addField('♫ Music', '\`play\`, \`skip\`, \`pause\`, \`resume\`, \`queue\`, \`stop\`, \`leave\`, \`volume\`')
   .addField('✎ Info', '\`ping\`, \`botinfo\`, \`stats\`')
   .addField('Support', '\`bugreport\`, \`botinvite\`')
