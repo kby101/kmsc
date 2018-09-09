@@ -7,11 +7,8 @@ const ytdl = require('ytdl-core');
 const bot = new Discord.Client({disableEveryone: true});
 const config = require("./config.json");
 const client = new Discord.Client();
-const fs = require("fs");
 const youtube = new YouTube(google_api_key);
 const queue = new Map();
-const superagent = require('superagent');
-const Canvas = require('canvas');
 const DBL = require("dblapi.js");
 const dbl = new DBL(process.env.DBL_API, bot);
 
