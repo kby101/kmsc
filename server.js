@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const { Client, Util } = require('discord.js');
 const { prefix } = require('./config');
-const google_api_key = process.env.API
+const google_api_key = process.env.API_TOKEN
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 const bot = new Discord.Client({disableEveryone: true});
@@ -24,7 +24,7 @@ dbl.on('error', e => {
 });
 
 bot.on("ready", () => {
-    console.log(`${bot.user.username} ready to playing music dude!`);
+    console.log(`${bot.user.username} ready to streaming music dude!`);
 });
 
 bot.on("ready", () => {
@@ -268,7 +268,7 @@ function play(guild, song, msg) {
   	.addField("Volume", `${serverQueue.volume}%`, true)
   	.addField("Duration", `${song.durationh}hr ${song.durationm}min ${song.durations}sec`, true)
   	.setFooter("📝 If bot is not playing a music, maybe the bot is restarting!")
-	serverQueue.textChannel.send(embed).then (m => m.delete(20000));
+	serverQueue.textChannel.send(`**Playing🎶 \`\`${song.title}\`\` - Now!**`).then (m => m.delete(20000));
 }
  
  bot.on("message", async message => {
