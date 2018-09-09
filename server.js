@@ -93,7 +93,6 @@ msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.
         return msg.channel.send({ embed: { description: `☑ Playlist: **${playlist.title}** has been added to the queue!`}}); 	
       } else { 		
         try {
-	  msg.channel.send(`**Searching \`${args[1]}\` !**`);
           var video = await youtube.getVideo(url); 		
         } catch (error) { 			
           try { 				
