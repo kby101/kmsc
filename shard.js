@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Manager = new Discord.ShardingManager('./server.js', {
-  token: process.env.TOKEN
+  token: process.env.BOT_TOKEN
 })
 Manager.spawn(1); // This example will spawn 2 shards (5,000 guilds);
 
