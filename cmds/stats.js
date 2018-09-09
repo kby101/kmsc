@@ -22,7 +22,7 @@ const run = exports.run = async (client, msg, args) => {
     
     let bicon = client.user.displayAvatarURL;
     let info = new Discord.RichEmbed()
-        .setColor(config.conan)
+        .setColor(config.k)
         .setAuthor('Bot Stats :', bicon)
         .setThumbnail("https://media.giphy.com/media/11epGABv3I5NUQ/giphy.gif")
         .addField('General Stats', `• Servers: **${client.guilds.size}**
