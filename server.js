@@ -36,8 +36,14 @@ bot.on("ready", () => {
        }, 20000);
 });	
 
+bot.on("message", async msg => {
+if (msg.content == `<@${bot.user.id}>`) {
+msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.prefix}\`\``);
+}
+})
+
  bot.on("guildCreate", guild => {
-    const liveJoin = bot.channels.get("475796303268544532"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
+    const liveJoin = bot.channels.get("488398627035938816"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveJEmbed = new Discord.RichEmbed()
     .setColor(0xe55EA2)
     .setAuthor(bot.user.username, bot.user.avatarURL)
@@ -49,7 +55,7 @@ bot.on("ready", () => {
  });
 
  bot.on("guildDelete", guild => {
-    const liveLeave = bot.channels.get("475796303268544532"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
+    const liveLeave = bot.channels.get("488398627035938816"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveLEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setTitle(`__*Your Bot Has Stopped Serving A Guild*__`)
