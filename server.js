@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const { Client, Util } = require('discord.js');
-const { prefix } = require('./config');
+const { token, prefix } = require('./config');
 const google_api_key = process.env.API_TOKEN
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
@@ -12,13 +12,13 @@ const queue = new Map();
 const DBL = require("dblapi.js");
 const dbl = new DBL(process.env.DBL_API, bot);
 
-dbl.on('posted', () => {
+/*dbl.on('posted', () => {
   console.log('Server count posted!');
 });
 
 dbl.on('error', e => {
  console.log(`Oops! ${e}`);
-});
+});*/
 
 bot.on("ready", () => {
     console.log(`${bot.user.username} ready to streaming music dude!`);
@@ -76,7 +76,8 @@ msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.
 		
 		if (command === 'play' || command === 'p') {
     if (!msg.member.voiceChannel) return msg.channel.send('You`re not in Voice Channel!');
-    const searchString = args.slice(1).join(' '); 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : ''; 	 	
+    const searchString = args.slice(1).join(' '); 	
+    const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : ''; 	 	
     const voiceChannel = msg.member.voiceChannel; 	
     if (!voiceChannel) return msg.channel.send({ embed: { description: 'I\'m sorry but you need to be in a voice channel to play music :blush:'}}); 	
     if (!args[1]) return msg.channel.send({ embed: { color: 0x646970, description: `Please provide [Song Name]/[Video URL]/[Playlist URL]`}}); 	
