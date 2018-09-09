@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require('../config.json');
 
 exports.run = async (bot, message, args) => {
 	
@@ -9,7 +10,7 @@ exports.run = async (bot, message, args) => {
 	
         let embed = new Discord.RichEmbed()
         .setTitle(`⏳ PINGING!`)
-        .setColor(0xe55EA2)
+        .setColor(config.k)
         .addField("📶 Latency", `\`${diff}ms\``, true)
         .addField("📱 Websocket", `\`${API}ms\``, true)
 	message.channel.send(embed);
