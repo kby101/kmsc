@@ -20,7 +20,7 @@
     "simple-youtube-api": "^5.0.2",
     "request": "^2.88.0",
     "ytdl-core": "^0.25.2",    
-    "dblapi.js": "^2.2.0",
+    //"dblapi.js": "^2.2.0",
     "moment": "^2.22.2"
   },
   "engines": {
