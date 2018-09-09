@@ -82,8 +82,7 @@ msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.
     const searchString = args.slice(1).join(' '); 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : ''; 	 	
     const voiceChannel = msg.member.voiceChannel; 	
     if (!voiceChannel) return msg.channel.send({ embed: { description: 'I\'m sorry but you need to be in a voice channel to play music :blush:'}}); 	
-    if (!args[1]) return msg.channel.send({ embed: { color: 0x646970, description: `Please provide [Song Name]/[Video URL]/[Playlist URL]`}}); 	
-    if (args[1]) return msg.channel.send(`**Searching \`${args[1]}\` !`);		
+    if (!args[1]) return msg.channel.send({ embed: { color: 0x646970, description: `Please provide [Song Name]/[Video URL]/[Playlist URL]`}}); 			
       //if(serverQueue.voiceChannel.id !== msg.member.voiceChannel.id) return msg.channel.send({ embed: { color: 0xf91d1d, description: `Woop I already playing in the other channel you must be in **${serverQueue.voiceChannel.name}** to request the song`}});	 	
       const permissions = voiceChannel.permissionsFor(msg.client.user); 	
       if (!permissions.has('CONNECT')) return msg.channel.send({ embed: { description: 'I can\'t connect, missing permissions :sad:'}}); 	
@@ -96,7 +95,8 @@ msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.
           await handleVideo(video2, msg, voiceChannel, true); 		} 		
         return msg.channel.send({ embed: { description: `☑ Playlist: **${playlist.title}** has been added to the queue!`}}); 	
       } else { 		
-        try { 			
+        try {
+	  msg.channel.send(`**Searching \`${args[1]}\` !`);
           var video = await youtube.getVideo(url); 		
         } catch (error) { 			
           try { 				
