@@ -42,7 +42,7 @@ msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.
  bot.on("guildCreate", guild => {
     const liveJoin = bot.channels.get("488398627035938816"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveJEmbed = new Discord.RichEmbed()
-    .setColor(0xe55EA2)
+    .setColor(config.k)
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setTitle(`Your Bot Has Started Serving A Guild`)
     .addField('Guild Name :', `${guild.name}`)
