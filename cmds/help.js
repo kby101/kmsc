@@ -12,7 +12,7 @@ exports.run = async (bot, message, args) => {
   .addField('Music', '\`play\`, \`skip\`, \`pause\`, \`np\`, \`resume\`, \`queue\`, \`leave\`, \`loop\`')
   .addField('Info', '\`ping\`, \`stats\`')
   .addField('Misc.', '\`avatar\`')
-  .addField('Support', '\`bugreport\`, \`botinvite\`')
+  .addField('Support', '\`bugreport\`, \`invitebot\`')
   .addField("**Link**", "[Invite me](https://discordapp.com/oauth2/authorize?client_id=471757779091193856&scope=bot&permissions=1664478529) | [Support Server](https://discord.gg/JPUa7KP)")
   .setTimestamp()
   message.channel.send(hembed);  
