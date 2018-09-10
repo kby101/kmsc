@@ -20,6 +20,8 @@ dbl.on('error', e => {
  console.log(`Oops! ${e}`);
 });*/
 
+bot.queue = this.queue;
+
 bot.on("ready", () => {
     console.log(`${bot.user.username} ready to streaming music dude!`);
 });
@@ -200,6 +202,8 @@ msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.
 	return undefined;
 });
 
+exports.queue = queue;
+
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
 	const serverQueue = queue.get(msg.guild.id);
 	const song = {
@@ -210,7 +214,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		durationm: video.duration.minutes,
 		durations: video.duration.seconds,
 		room:      msg.member.voiceChannel.toString(),
-    request:   msg.author.toString()
+                request:   msg.author.toString()
 	};
 	if (!serverQueue) {
 		const queueConstruct = {
@@ -219,7 +223,8 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 			connection: null,
 			songs: [],
 			volume: 100,
-			playing: true			
+			playing: true, 
+                        loop: false
 		};
 		queue.set(msg.guild.id, queueConstruct);
 
