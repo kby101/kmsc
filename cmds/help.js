@@ -14,6 +14,5 @@ exports.run = async (bot, message, args) => {
   .addField('Support', '\`bugreport\`, \`botinvite\`')
   .addField("**Link**", "[Invite me](https://discordapp.com/oauth2/authorize?client_id=471757779091193856&scope=bot&permissions=1664478529) | [Support Server](https://discord.gg/JPUa7KP)")
   .setTimestamp()
-  .setFooter(`Request by : ${message.author.username} `);
   message.channel.send(hembed);  
 } 
