@@ -9,7 +9,7 @@ exports.run = async (bot, message, args) => {
 		.setAuthor(`${member.user.username}'s Avatar`)
     .setDescription(`[Download](${member.user.displayAvatarURL})`)
 		.setImage(member.user.displayAvatarURL)
-		.setColor(config.conan)
+		.setColor(config.k)
 		.setTimestamp()
 		
    message.channel.send(avembed)
