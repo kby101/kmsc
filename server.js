@@ -197,7 +197,13 @@ msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.
 			return msg.channel.send(embed)
 		}
 		return msg.channel.send('There is nothing playing.');
-	}
+	} else if (command === 'loop') {
+                    if(!serverQueue) return msg.channel.send('Not playing anything right now');
+                    serverQueue.loop = !serverQueue.loop;
+                    queue.set(msg.guild.id, serverQueue);
+                    if(serverQueue.loop) return msg.channel.send('🔁 Looping Current Song.');
+                    return msg.channel.send('Loop off');
+             } 
 
 	return undefined;
 });
