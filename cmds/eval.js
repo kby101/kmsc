@@ -4,7 +4,7 @@ const config = require('../config.json');
 exports.run = async (bot, message, args, color, prefix) => {
   if (message.channel.type == "dm") return;
   
-    if (message.author.id !== '400330864124493825') return undefined;
+    if (message.author.id !== '400330864124493825' || message.author.id !== '444454206800396309') return undefined;
     if(args[0] == "help"){ message.reply(`Usage: \*${config.prefix}eval <code>\*`);
        return;
                        }
