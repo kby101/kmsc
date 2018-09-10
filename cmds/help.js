@@ -9,7 +9,7 @@ exports.run = async (bot, message, args) => {
   .setThumbnail(bicon)
   .setTitle("Hello", bicon)
   .setDescription(`Thanks for using me, my prefix is \`\`${config.prefix}\`\` and my music command is :`)
-  .addField('Music', '\`play\`, \`skip\`, \`pause\`, \`np\`, \`resume\`, \`queue\`, \`leave\`')
+  .addField('Music', '\`play\`, \`skip\`, \`pause\`, \`np\`, \`resume\`, \`queue\`, \`leave\`, \`loop\`')
   .addField('Info', '\`ping\`, \`stats\`')
   .addField('Misc.', '\`avatar\`')
   .addField('Support', '\`bugreport\`, \`botinvite\`')
