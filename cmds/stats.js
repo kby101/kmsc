@@ -6,7 +6,7 @@ const run = exports.run = async (client, msg, args) => {
   if (msg.channel.type == "dm") return;
   
   let start = Date.now()
-  let postMsg = await msg.channel.send(`**<a:loading:481473613808140289> | Please wait . . .**`);
+  let postMsg = await msg.channel.send(`**Please wait . . .**`);
     const os = require('os');
     const arch = os.arch()
     const used = process.memoryUsage().heapUsed / 1024 / 1024;
