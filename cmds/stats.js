@@ -25,7 +25,8 @@ const run = exports.run = async (client, msg, args) => {
         .setColor(config.k)
         .setAuthor('Bot Stats :', bicon)
         .setThumbnail("https://media.giphy.com/media/11epGABv3I5NUQ/giphy.gif")
-        .addField('General Stats', `• Servers: **${client.guilds.size}**
+        .addField('General Stats', `• Shard: **${client.shard.count}**
+• Servers: **${client.guilds.size}**
 • Channels: **${client.channels.size}**
 • Users: **${client.users.size}**`)
         .addField('System Stats', `• Operating System: **${os.platform}** 
