@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const moment = require("moment");
 const config = require('../config.json');
+const queue = require('../server.js').queue.size
 
 const run = exports.run = async (client, msg, args) => {
   if (msg.channel.type == "dm") return;
@@ -28,7 +29,8 @@ const run = exports.run = async (client, msg, args) => {
         .addField('General Stats', `• Shard: **${client.shard.count}**
 • Servers: **${client.guilds.size}**
 • Channels: **${client.channels.size}**
-• Users: **${client.users.size}**`)
+• Users: **${client.users.size}**
+• Queue: **${queue}**`)
         .addField('System Stats', `• Operating System: **${os.platform}** 
 • CPU Architecture: **${arch}**
 • CPU Used: **${cpu_usage}%**
