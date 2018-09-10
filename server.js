@@ -230,7 +230,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 			songs: [],
 			volume: 100,
 			playing: true, 
-                        loop: false
+                        loop: false    //HARUSNYA UDAH BENER ANJAY
 		};
 		queue.set(msg.guild.id, queueConstruct);
 
