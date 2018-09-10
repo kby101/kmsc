@@ -96,7 +96,8 @@ msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.
         try { 			
           var video = await youtube.getVideo(url); 		
         } catch (error) { 			
-          try { 				
+          try { 	
+	    msg.channel.send(`<:yt:488502957554532364> **Searching:mag_right:  \`${searchString}\`**`);
             var videos = await youtube.searchVideos(searchString, 1); 				
             var video = await youtube.getVideoByID(videos[0].id); 			
           } catch (err) { 				
@@ -272,7 +273,7 @@ function play(guild, song, msg) {
   	.addField("Volume", `${serverQueue.volume}%`, true)
   	.addField("Duration", `${song.durationh}hr ${song.durationm}min ${song.durations}sec`, true)
   	.setFooter("📝 If bot is not playing a music, maybe the bot is restarting!")
-	serverQueue.textChannel.send(`**Playing🎶 \`\`${song.title}\`\` - Now!**`).then (m => m.delete(20000));
+	serverQueue.textChannel.send(`**<:yt:488502957554532364> Playing🎶 \`\`${song.title}\`\` - Now!**`).then (m => m.delete(20000));
 }
  
  bot.on("message", async message => {
