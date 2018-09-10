@@ -266,7 +266,8 @@ function play(guild, song, msg) {
 		.on('end', reason => {
 			if (reason === 'Stream is not generating quickly enough.') console.log('Song ended.');
       else console.log(reason);
-			serverQueue.songs.shift();
+			const shiffed = serverQueue.songs.shift();
+			if(serverQueue.loop) serverQueue.songs.push(shiffed);
 			play(guild, serverQueue.songs[0]);		
     })
 		.on('error', error => console.error(error));
