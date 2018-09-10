@@ -274,16 +274,6 @@ function play(guild, song, msg) {
 	
 	let bicon = ["https://media.giphy.com/media/wdi1xUhDaAGuQ/giphy.gif"]
   let con = Math.floor((Math.random() * bicon.length));
-	let embed = new Discord.RichEmbed()
-	.setColor(config.k)
-	.setAuthor(`🎶 Start Playing`, bicon[con])
-  	.setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60`)
-  	.addField('Title', `__[${song.title}](${song.url})__`, true)
-    	.addField('Request by', `${song.request}`, true)
-    	.addField('Playing at', `${song.room}`, true)
-  	.addField("Volume", `${serverQueue.volume}%`, true)
-  	.addField("Duration", `${song.durationh}hr ${song.durationm}min ${song.durations}sec`, true)
-  	.setFooter("📝 If bot is not playing a music, maybe the bot is restarting!")
 	serverQueue.textChannel.send(`**<:yt:488502957554532364> Playing🎶 \`\`${song.title}\`\` - Now!**`).then (m => m.delete(20000));
 }
  
