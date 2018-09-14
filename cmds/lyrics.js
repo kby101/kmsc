@@ -10,7 +10,7 @@ exports.run = async (client, msg, args) => {
 		embed.setColor('RANDOM');
 		const { body } = await snek.get('https://api.genius.com/search')
 		.query({ q: args.slice(1).join('+') })
-		.set('Authorization', `Bearer ${process.env.GENIUS}`);
+		.set('Authorization', `Bearer ${process.env.GENIUS_API}`);
 		if(!body.response.hits.length) return msg.channel.send({ embed: { color: 0xf91d1d, description: 'No result found'}});
 		const result = body.response.hits.splice(0, 5);
 		const thisMess = await msg.channel.send(embed.setDescription(result.map((x, i) => `${number[i]}[${x.result.full_title}](${x.result.url})`).join('\n')));
