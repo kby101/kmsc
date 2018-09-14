@@ -3,6 +3,14 @@ const snek = require('node-superfetch');
 const { load } = require('cheerio');
 const number = ['1⃣', '2⃣', '3⃣', '4⃣', '5⃣'];
 
+function chunk(array, chunkSize) {
+    const temp = [];
+    for(let i = 0; i < array.length; i+= chunkSize){
+      temp.push(array.slice(i, i+chunkSize));
+    }
+    return temp;
+  }
+
 exports.run = async (client, msg, args) => {
 
 	if(!args[1]) return msg.channel.send({embed: {color: 0x45A1DB, description: 'No query provided'}});
@@ -30,7 +38,7 @@ exports.run = async (client, msg, args) => {
 		}
 		const choice = number.indexOf(response.first().emoji.name);
 		const { text } = await snek.get(result[choice].result.url);
-	   const ouch = require('../util.js').chunk(load(text)('.lyrics').text().trim(), 400)
+	   const ouch = chunk(load(text)('.lyrics').text().trim(), 400)
      const pilGan = ['⬅', '🔴', '➡'];
     let index = 0;
     embed.setTitle(result[choice].result.full_title);
