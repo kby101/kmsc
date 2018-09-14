@@ -46,7 +46,8 @@ exports.run = async (client, msg, args) => {
 	}
 	paginate();
 	async function paginate(){
-		const filter = (rect, usr) => pilGan.includes(rect.emoji.name) && usr.id === msg.author.id;		const response = await thisMes.awaitReactions(filter, {
+		const filter = (rect, usr) => pilGan.includes(rect.emoji.name) && usr.id === msg.author.id;		
+		const response = await thisMes.awaitReactions(filter, {
 			max: 1,
 			time: 90000000,
 		});
