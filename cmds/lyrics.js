@@ -21,7 +21,7 @@ exports.run = async (client, msg, args) => {
 		.set('Authorization', `Bearer ${process.env.GENIUS_API}`);
 		if(!body.response.hits.length) return msg.channel.send({ embed: { color: 0x45A1DB, description: 'No result found'}});
 		const result = body.response.hits.splice(0, 5);
-		const thisMess = await msg.channel.send(embed.setDescription(result.map((x, i) => `${number[i]}[${x.result.full_title}](${x.result.url})`).join('\n')));
+		const thisMess = await msg.channel.send(embed.setDescription(result.map((x, i) => `${number[i]} [${x.result.full_title}](${x.result.url})`).join('\n')));
 		for(let i = 0; i < result.length; i++){
 			await thisMess.react(number[i]);
 		}
@@ -67,7 +67,7 @@ exports.run = async (client, msg, args) => {
 		index = ((index % ouch.length) + ouch.length) % ouch.length;
 		embed.setColor(0x45A1DB);
 		embed.setDescription(ouch[index]);
-		embed.setFooter(`Page ${index+1} of ${ouch.length} | ${msg.author.tag}`, msg.author.displayAvatarURL);
+		embed.setFooter(`Page ${index+1} of ${ouch.length});
 		thisMes.edit(embed);
 		return paginate();
 	} 
