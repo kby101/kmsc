@@ -6,7 +6,6 @@ const number = ['1⃣', '2⃣', '3⃣', '4⃣', '5⃣'];
 exports.run = async (client, msg, args) => {
 
 	if(!args[1]) return msg.channel.send({embed: {color: 0xf91d1d, description: 'No query provided'}});
-	try{
 		const embed = new RichEmbed()
 		embed.setColor('RANDOM');
 		const { body } = await snek.get('https://api.genius.com/search')
@@ -61,6 +60,5 @@ exports.run = async (client, msg, args) => {
 		embed.setFooter(`Page ${index+1} of ${ouch.length} | ${msg.author.tag}`, msg.author.displayAvatarURL);
 		thisMes.edit(embed);
 		return paginate();
-	}   
-	}
+	} 
 }
