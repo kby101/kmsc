@@ -157,11 +157,13 @@ msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.
 		return msg.channel.send(volembed);
 		
 	} else if (command === 'np') {
+		let bicon = ["https://media.giphy.com/media/wdi1xUhDaAGuQ/giphy.gif"]
+  		let con = Math.floor((Math.random() * bicon.length));
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
     const request = msg.author.toString()
 		let embed = new Discord.RichEmbed()
 		.setColor(config.k)
-		.setTitle("🎶 Now playing:")
+		.setAuthor("🎶 Now playing:", con)
     .setThumbnail(`https://i.ytimg.com/vi/${serverQueue.songs[0].id}/default.jpg?width=80&height=60`)
 		.setDescription(`[${serverQueue.songs[0].title}](${serverQueue.songs[0].url})`)
     .addField('Request by:', `${serverQueue.songs[0].request}`)
