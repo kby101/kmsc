@@ -7,7 +7,7 @@ exports.run = async (client, msg, args) => {
 
 	if(!args[1]) return msg.channel.send({embed: {color: 0x45A1DB, description: 'No query provided'}});
 		const embed = new RichEmbed()
-		embed.setColor(0x45A1DB');
+		embed.setColor(0x45A1DB);
 		const { body } = await snek.get('https://api.genius.com/search')
 		.query({ q: args.slice(1).join('+') })
 		.set('Authorization', `Bearer ${process.env.GENIUS_API}`);
