@@ -25,7 +25,7 @@ const run = exports.run = async (client, msg, args) => {
     let info = new Discord.RichEmbed()
         .setColor(config.k)
         .setAuthor('Bot Stats :', bicon)
-        .setThumbnail("https://media.giphy.com/media/11epGABv3I5NUQ/giphy.gif")
+        .setThumbnail("https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60")
         .addField('General Stats', `• Shard: **${client.shard.count}**
 • Servers: **${client.guilds.size}**
 • Channels: **${client.channels.size}**
