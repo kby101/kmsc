@@ -5,13 +5,13 @@ const number = ['1⃣', '2⃣', '3⃣', '4⃣', '5⃣'];
 
 exports.run = async (client, msg, args) => {
 
-	if(!args[1]) return msg.channel.send({embed: {color: 0xf91d1d, description: 'No query provided'}});
+	if(!args[1]) return msg.channel.send({embed: {color: 0x45A1DB, description: 'No query provided'}});
 		const embed = new RichEmbed()
-		embed.setColor('RANDOM');
+		embed.setColor(0x45A1DB');
 		const { body } = await snek.get('https://api.genius.com/search')
 		.query({ q: args.slice(1).join('+') })
 		.set('Authorization', `Bearer ${process.env.GENIUS_API}`);
-		if(!body.response.hits.length) return msg.channel.send({ embed: { color: 0xf91d1d, description: 'No result found'}});
+		if(!body.response.hits.length) return msg.channel.send({ embed: { color: 0x45A1DB, description: 'No result found'}});
 		const result = body.response.hits.splice(0, 5);
 		const thisMess = await msg.channel.send(embed.setDescription(result.map((x, i) => `${number[i]}[${x.result.full_title}](${x.result.url})`).join('\n')));
 		for(let i = 0; i < result.length; i++){
@@ -34,6 +34,7 @@ exports.run = async (client, msg, args) => {
      const pilGan = ['⬅', '🔴', '➡'];
     let index = 0;
     embed.setTitle(result[choice].result.full_title);
+		embed.setColor(0x45A1DB);
 		embed.setURL(result[choice].result.url);
 		embed.setThumbnail(result[choice].result.header_image_thumbnail_url);
 		embed.setDescription(ouch[index])
@@ -55,7 +56,7 @@ exports.run = async (client, msg, args) => {
 		if(emoji === '⬅') index--;
 		if(emoji === '➡') index++;
 		index = ((index % ouch.length) + ouch.length) % ouch.length;
-		embed.setColor('RANDOM');
+		embed.setColor(0x45A1DB);
 		embed.setDescription(ouch[index]);
 		embed.setFooter(`Page ${index+1} of ${ouch.length} | ${msg.author.tag}`, msg.author.displayAvatarURL);
 		thisMes.edit(embed);
