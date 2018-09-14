@@ -163,7 +163,7 @@ msg.channel.send(`Hello ${msg.author}, my prefix on this server is \`\`${config.
     const request = msg.author.toString()
 		let embed = new Discord.RichEmbed()
 		.setColor(config.k)
-		.setAuthor("🎶 Now playing:", con)
+		.setAuthor("🎶 Now playing:", bicon[con])
     .setThumbnail(`https://i.ytimg.com/vi/${serverQueue.songs[0].id}/default.jpg?width=80&height=60`)
 		.setDescription(`[${serverQueue.songs[0].title}](${serverQueue.songs[0].url})`)
     .addField('Request by:', `${serverQueue.songs[0].request}`)
