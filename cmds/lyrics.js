@@ -67,7 +67,7 @@ exports.run = async (client, msg, args) => {
 		index = ((index % ouch.length) + ouch.length) % ouch.length;
 		embed.setColor(0x45A1DB);
 		embed.setDescription(ouch[index]);
-		embed.setFooter(`Page ${index+1} of ${ouch.length});
+		embed.setFooter(`Page ${index+1} of ${ouch.length}`);
 		thisMes.edit(embed);
 		return paginate();
 	} 
