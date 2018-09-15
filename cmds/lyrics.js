@@ -46,7 +46,7 @@ exports.run = async (client, msg, args) => {
 		embed.setURL(result[choice].result.url);
 		embed.setThumbnail(result[choice].result.header_image_thumbnail_url);
 		embed.setDescription(ouch[index])
-    embed.setFooter(`Page ${index+1} of ${ouch.length} | ${msg.author.tag}`, msg.author.displayAvatarURL);
+    embed.setFooter(`Page ${index+1} of ${ouch.length}`);
 		const thisMes = await msg.channel.send(embed)
     
     for(const pil of pilGan){
