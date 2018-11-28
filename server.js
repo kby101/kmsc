@@ -29,7 +29,7 @@ bot.on("ready", () => {
 bot.on("ready", () => {
     bot.user.setActivity("STREAMING");
     setInterval(() => {
-       let status = [`music with ${config.prefix}help`, `prefix ? just @mention me`]
+       let status = [`with Maika#1465`, `music with ${config.prefix}help`, `prefix ? just @mention me`]
        let random = Math.floor(Math.random() * status.length)
        bot.user.setGame(status[random], 'https://twitch.tv/kibay18');
        }, 20000);
