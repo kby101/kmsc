@@ -261,7 +261,7 @@ function play(guild, song, msg) {
 	if (!song) {    
 		serverQueue.voiceChannel.leave();
 		queue.delete(guild.id);
-		return;
+		return msg.channel.send(`All songs has been played, leaving channel.now!`);
 	}
 
 	const dispatcher = serverQueue.connection.playStream(ytdl(song.url, { filter : 'audioonly' }))
@@ -274,6 +274,7 @@ function play(guild, song, msg) {
     })
 		.on('error', error => console.error(error));
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 100);
+	dispatcher.setBitrate(96);
 	
 	let bicon = ["https://media.giphy.com/media/wdi1xUhDaAGuQ/giphy.gif"]
   let con = Math.floor((Math.random() * bicon.length));
